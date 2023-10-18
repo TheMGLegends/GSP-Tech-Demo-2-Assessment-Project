@@ -12,11 +12,10 @@ Gameplay Systems Programming 2nd Tech Demo (3D First Person Horror)
 3. Subtitle Typewriter System with Voiceover
 4. Document Viewing System
 5. Keypad Puzzle
-
-a. All keys to display digit on-screen
-b. Should require 4-digit code
-c. LED lights should glow depending on right/wrong answer
-d. Clear Key, Delete Key and Confirm Key
+   - All keys to display digit on-screen
+   - Should require 4-digit code
+   - LED lights should glow depending on right/wrong answer
+   - Clear Key, Delete Key and Confirm Key
 
 # Requirement Specifications:
 1. Interaction System With Tooltips - When you look at an item, an outline shader should be displayed alongside a tooltip that shows what we can do with that item (ie pickup, open, pull, push, interact, read etc).
