@@ -12,6 +12,7 @@ Gameplay Systems Programming 2nd Tech Demo (3D First Person Horror)
 3. Subtitle Typewriter System with Voiceover
 4. Document Viewing System
 5. Keypad Puzzle
+
 a. All keys to display digit on-screen
 b. Should require 4-digit code
 c. LED lights should glow depending on right/wrong answer
