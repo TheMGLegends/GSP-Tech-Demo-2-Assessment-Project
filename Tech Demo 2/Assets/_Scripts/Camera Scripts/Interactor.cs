@@ -9,18 +9,28 @@ public class Interactor : MonoBehaviour
 {
     [Header("Interaction Settings:")]
     [SerializeField] private float interactionRange;
+    private IInteractable previousInteractable;
 
     private void Update()
     {
         Ray raycast = new Ray(transform.position, transform.forward);
+        IInteractable interactable = null;
 
         if (Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactableObject))
+            if (hitInfo.collider.gameObject.TryGetComponent(out interactable))
             {
-                // Temporary Test:
-                interactableObject.Interact();
+                if (previousInteractable != interactable)
+                {
+                    interactable.OnHoverEnter();
+                    previousInteractable = interactable;
+                }
             }
+        }
+        else if (previousInteractable != null)
+        {
+            previousInteractable.OnHoverExit();
+            previousInteractable = null;
         }
     }
 
