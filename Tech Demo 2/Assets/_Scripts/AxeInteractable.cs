@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeInteractable : MonoBehaviour, IInteractable
+public class AxeInteractable : MonoBehaviour, IInteractable
 {
     private MeshRenderer meshRenderer;
     private int outlineMaterialIndex;
@@ -24,7 +24,7 @@ public class CubeInteractable : MonoBehaviour, IInteractable
     {
         meshRenderer.materials[outlineMaterialIndex].SetFloat("_Scale", 1.03f);
     }
-    
+
     public void OnHoverExit()
     {
         meshRenderer.materials[outlineMaterialIndex].SetFloat("_Scale", 0);
@@ -32,6 +32,6 @@ public class CubeInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Interacting with cube!");
+        Debug.Log("Interacting with axe!");
     }
 }

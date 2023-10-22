@@ -9,7 +9,9 @@ public class Interactor : MonoBehaviour
 {
     [Header("Interaction Settings:")]
     [SerializeField] private float interactionRange;
+
     private IInteractable previousInteractable;
+    private bool isHovering;
 
     private void Update()
     {
@@ -24,6 +26,12 @@ public class Interactor : MonoBehaviour
                 {
                     interactable.OnHoverEnter();
                     previousInteractable = interactable;
+                    isHovering = true;
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactable.Interact();
                 }
             }
         }
@@ -31,11 +39,17 @@ public class Interactor : MonoBehaviour
         {
             previousInteractable.OnHoverExit();
             previousInteractable = null;
+            isHovering = false;
         }
     }
 
     private void OnDrawGizmos()
     {
         Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
+    }
+
+    public bool IsHovering()
+    {
+        return isHovering;
     }
 }
