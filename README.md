@@ -9,7 +9,7 @@ Gameplay Systems Programming 2nd Tech Demo (3D First Person Horror)
 # Tech Demo Requirements:
 1. Interaction System with Tooltips
 2. Inventory System
-3. Subtitle Typewriter System with Voiceover
+3. Subtitle Typewriter System with Voiceover [DONE - NOT TESTED]
 4. Document Viewing System
 5. Keypad Puzzle
    - All keys to display digit on-screen
