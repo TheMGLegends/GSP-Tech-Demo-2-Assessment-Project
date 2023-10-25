@@ -6,22 +6,23 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private Interactor interactor;
-    [SerializeField] private Image tooltipIcon;
+    [SerializeField] private GameObject tooltipObject;
+    [SerializeField] private GameObject typewriterObject;
 
     private void Start()
     {
-        tooltipIcon.enabled = false;
+        tooltipObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (interactor.IsHovering() && !tooltipIcon.enabled)
+        if (interactor.IsHovering() && !tooltipObject.activeSelf)
         {
-            tooltipIcon.enabled = true;
+            tooltipObject.SetActive(true);
         }
-        else if (!interactor.IsHovering() && tooltipIcon.enabled)
+        else if (!interactor.IsHovering() && tooltipObject.activeSelf)
         {
-            tooltipIcon.enabled = false;
+            tooltipObject.SetActive(false);
         }
     }
 }
