@@ -40,8 +40,12 @@ public class CameraRotation : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -xRotationLimit, xRotationLimit);
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        playerOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        {
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            playerOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+
     }
 
     private void GetInputAxis()

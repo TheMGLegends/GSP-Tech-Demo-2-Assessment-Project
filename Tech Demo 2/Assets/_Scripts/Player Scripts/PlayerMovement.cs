@@ -40,7 +40,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movementDirection = playerOrientation.forward * verticalInput + playerOrientation.right * horizontalInput;
 
-        rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Force);
+        if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        {
+            rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Force);
+        }
     }
 
     private void GetInputAxis()

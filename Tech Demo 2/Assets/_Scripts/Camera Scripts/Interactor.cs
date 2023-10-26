@@ -15,12 +15,10 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        Ray raycast = new Ray(transform.position, transform.forward);
-        IInteractable interactable = null;
-
+        Ray raycast = new(transform.position, transform.forward);
         if (Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out interactable))
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
                 if (previousInteractable != interactable)
                 {
@@ -34,13 +32,22 @@ public class Interactor : MonoBehaviour
                     interactable.Interact();
                 }
             }
+            else if (previousInteractable != null)
+            {
+                ClearInteractionOutline();
+            }
         }
         else if (previousInteractable != null)
         {
-            previousInteractable.OnHoverExit();
-            previousInteractable = null;
-            isHovering = false;
+            ClearInteractionOutline();
         }
+    }
+
+    private void ClearInteractionOutline()
+    {
+        previousInteractable.OnHoverExit();
+        previousInteractable = null;
+        isHovering = false;
     }
 
     private void OnDrawGizmos()
