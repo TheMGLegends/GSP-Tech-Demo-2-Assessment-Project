@@ -10,5 +10,6 @@ public class DocumentInteractable : InteractableBaseClass, IInteractable
     {
         Debug.Log("Interacting with document!");
         CanvasManager.instance.ShowCanvas(CanvasManager.CanvasTypes.DocumentView);
+        CanvasManager.instance.AccessCanvasGO(CanvasManager.CanvasTypes.DocumentView).GetComponent<DocumentViewingController>().SetDocumentContentsText(documentText);
     }
 }

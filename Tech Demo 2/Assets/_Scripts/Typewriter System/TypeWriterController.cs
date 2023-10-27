@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TypeWriterController : MonoBehaviour
@@ -12,6 +13,7 @@ public class TypeWriterController : MonoBehaviour
     [SerializeField] private List<AudioClip> audioPhrasesList = new List<AudioClip>();
 
     private AudioSource audioSource;
+    private bool isTalking = false;
 
     private void Start()
     {
@@ -20,10 +22,11 @@ public class TypeWriterController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isTalking)
         {
             if (textPhrasesList.Count == audioPhrasesList.Count) 
-            { 
+            {
+                isTalking = true;
                 StartCoroutine(TypewriterCoroutine(typewriterEffectDelay));
             }
             else
@@ -56,5 +59,6 @@ public class TypeWriterController : MonoBehaviour
             typewriterText.text = null;
         }
         typewriterText.text = null;
+        isTalking = false;
     }
 }

@@ -42,12 +42,13 @@ public class CameraRotation : MonoBehaviour
 
         if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             playerOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }

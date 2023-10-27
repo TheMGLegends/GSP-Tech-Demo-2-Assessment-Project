@@ -16,7 +16,7 @@ public class Interactor : MonoBehaviour
     private void Update()
     {
         Ray raycast = new(transform.position, transform.forward);
-        if (Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
+        if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD && Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {

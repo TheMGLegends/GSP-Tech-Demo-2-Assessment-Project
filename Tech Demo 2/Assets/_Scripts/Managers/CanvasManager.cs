@@ -72,4 +72,9 @@ public class CanvasManager : MonoBehaviour
             }
         }
     }
+
+    public GameObject AccessCanvasGO(CanvasTypes currentCanvas)
+    {
+        return canvasDictionary[currentCanvas].gameObject;
+    }
 }
