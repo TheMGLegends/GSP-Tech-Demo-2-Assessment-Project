@@ -8,7 +8,8 @@ public class InteractableItemScriptableObject : ScriptableObject
         Cube,
         Axe,
         Document,
-        Flashlight
+        Flashlight,
+        Keypad
     }
 
     [SerializeField] private string InteractionPrompt;
