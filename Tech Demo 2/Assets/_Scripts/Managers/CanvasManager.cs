@@ -8,8 +8,8 @@ public class CanvasManager : MonoBehaviour
     public enum CanvasTypes
     {
         HUD,
-        DocumentView
-        //InventoryView
+        DocumentView,
+        InventoryView
     }
 
     public static CanvasManager instance;

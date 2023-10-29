@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         GetInputAxis();
+        OpenInventory();
     }
 
     private void FixedUpdate()
@@ -43,6 +44,17 @@ public class PlayerMovement : MonoBehaviour
         if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
             rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Force);
+        }
+    }
+
+    private void OpenInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I) && CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        {
+            CanvasManager.instance.ShowCanvas(CanvasManager.CanvasTypes.InventoryView);
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView) {
+            CanvasManager.instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
         }
     }
 
