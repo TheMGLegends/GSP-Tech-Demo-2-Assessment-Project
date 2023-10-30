@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionPrompt: to read
   itemType: 2
+  id: 4
+  itemName: Document
+  itemSprite: {fileID: -1692413423, guid: 916e0b9cd43906240a98cb96a972736f, type: 3}

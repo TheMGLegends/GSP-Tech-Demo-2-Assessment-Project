@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
+            InventoryManager.instance.ListItems();
             CanvasManager.instance.ShowCanvas(CanvasManager.CanvasTypes.InventoryView);
         }
         else if (Input.GetKeyDown(KeyCode.I) && CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView) {

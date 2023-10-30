@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class InteractableBaseClass : MonoBehaviour
 {
-    [SerializeField] private InteractableItemScriptableObject itemScriptableObject;
-    [SerializeField] private TMP_Text interactionPromptText;
+    [SerializeField] protected InteractableItemScriptableObject itemScriptableObject;
+    [SerializeField] protected TMP_Text interactionPromptText;
 
     protected MeshRenderer meshRenderer;
     protected int outlineMaterialIndex = -1;

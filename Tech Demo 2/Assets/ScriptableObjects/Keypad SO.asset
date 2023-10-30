@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionPrompt: to enter
   itemType: 4
+  id: 5
+  itemName: Keypad
+  itemSprite: {fileID: 425244214, guid: 916e0b9cd43906240a98cb96a972736f, type: 3}

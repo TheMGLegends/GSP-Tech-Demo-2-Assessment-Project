@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionPrompt: to pickup
   itemType: 1
+  id: 1
+  itemName: Axe
+  itemSprite: {fileID: 7482667652216324306, guid: f854a18c4781c5d4f80964a6e2ae943b, type: 3}

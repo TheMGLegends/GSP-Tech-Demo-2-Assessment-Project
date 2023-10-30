@@ -29,6 +29,7 @@ public class Interactor : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    ClearInteractionOutline();
                     interactable.Interact();
                 }
             }
