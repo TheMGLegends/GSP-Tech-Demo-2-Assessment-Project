@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Interactable Item", menuName = "ScriptableObjects/InteractableItem")]
-public class InteractableItemScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "New Interactable Item", menuName = "ScriptableObjects/Interactable")]
+public class Interactable : ScriptableObject
 {
     public enum ItemType
     {

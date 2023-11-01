@@ -9,8 +9,8 @@ public class TypeWriterController : MonoBehaviour
     [SerializeField] private float typewriterEffectDelay;
     [SerializeField] private float endOfLineDelay;
     [SerializeField] private TMP_Text typewriterText;
-    [SerializeField] private List<string> textPhrasesList = new List<string>();
-    [SerializeField] private List<AudioClip> audioPhrasesList = new List<AudioClip>();
+    [SerializeField] private List<string> textPhrasesList = new();
+    [SerializeField] private List<AudioClip> audioPhrasesList = new();
 
     private AudioSource audioSource;
     private bool isTalking = false;
@@ -55,7 +55,6 @@ public class TypeWriterController : MonoBehaviour
             {
                 yield return new WaitForSeconds((audioDuration - delayPerPhrase) + endOfLineDelay);
             }
-            delayPerPhrase = 0;
             typewriterText.text = null;
         }
         typewriterText.text = null;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private Interactor interactor;
+    [SerializeField] private PlayerInteractor interactor;
     [SerializeField] private GameObject tooltipObject;
     [SerializeField] private GameObject typewriterObject;
 

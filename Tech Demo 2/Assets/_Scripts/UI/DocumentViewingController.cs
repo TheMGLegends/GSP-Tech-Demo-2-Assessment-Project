@@ -18,9 +18,14 @@ public class DocumentViewingController : MonoBehaviour
     }
     private void Update()
     {
+        InteractWithDocument();
+    }
+
+    private void InteractWithDocument()
+    {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            CanvasManager.instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
+            CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
 
             if (isInspecting)
             {
@@ -36,8 +41,8 @@ public class DocumentViewingController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.I) && isInspecting)
         {
-            inspectionObject.SetActive(false);
             isInspecting = false;
+            inspectionObject.SetActive(false);
         }
     }
 

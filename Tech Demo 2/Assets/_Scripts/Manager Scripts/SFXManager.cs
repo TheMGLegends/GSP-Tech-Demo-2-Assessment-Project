@@ -7,17 +7,16 @@ public class SFXManager : MonoBehaviour
     {
         ItemUsed
     }
+    
+    public static SFXManager Instance;
 
-    // INFO: The order of sound effects and audio clips should be exactly the same, otherwise the incorrect sound will be played
     [SerializeField] private List<SoundEffects> soundEffectsList = new();
     [SerializeField] private List<AudioClip> audioClipsList = new();
     [SerializeField] private Dictionary<SoundEffects, AudioClip> soundEffectsDictionary = new();
-
     [SerializeField] private GameObject soundEffectsPlayerPrefab;
+    [Range(0, 1)]
+    [SerializeField] private float soundVolume = 1f;
 
-    private float soundVolume = 1f;
-
-    public static SFXManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -28,7 +27,6 @@ public class SFXManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(Instance);
         }
     }
 
@@ -52,11 +50,5 @@ public class SFXManager : MonoBehaviour
         {
             Debug.Log("Sound not found!");
         }
-    }
-
-    public void SoundEffectVolume(float volume)
-    {
-        // INFO: Changed via slider for sound effect volume bar inside of settings menu
-        soundVolume = volume;
     }
 }

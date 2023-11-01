@@ -12,7 +12,7 @@ public class CanvasManager : MonoBehaviour
         InventoryView
     }
 
-    public static CanvasManager instance;
+    public static CanvasManager Instance;
 
     [Header("Canvases:")]
     [SerializeField] private Canvas startingCanvas;
@@ -24,13 +24,13 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
         else
         {
-            instance = this;
+            Instance = this;
         }
     }
 
@@ -51,25 +51,17 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    private void DisableAllCanvases()
-    {
-        for (int i = 0; i < canvasList.Count; i++)
-        {
-            canvasList[i].gameObject.SetActive(false);
-        }
-    }
-
     public void ShowCanvas(CanvasTypes canvasToShow)
     {
-        DisableAllCanvases();
-
-        for (int i = 0; i < canvasDictionary.Count; i++)
+        if (canvasDictionary.ContainsKey(canvasToShow))
         {
-            if (canvasDictionary.ContainsKey(canvasToShow))
-            {
-                canvasDictionary[canvasToShow].gameObject.SetActive(true);
-                activeCanvas = canvasToShow;
-            }
+            canvasDictionary[activeCanvas].gameObject.SetActive(false);
+            canvasDictionary[canvasToShow].gameObject.SetActive(true);
+            activeCanvas = canvasToShow;
+        }
+        else
+        {
+            Debug.Log("Canvas type not found!");
         }
     }
 

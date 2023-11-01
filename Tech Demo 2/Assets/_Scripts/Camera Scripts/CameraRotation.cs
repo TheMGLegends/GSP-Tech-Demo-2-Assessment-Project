@@ -40,7 +40,7 @@ public class CameraRotation : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -xRotationLimit, xRotationLimit);
 
-        if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        if (CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
             Cursor.lockState = CursorLockMode.Locked;
             transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);

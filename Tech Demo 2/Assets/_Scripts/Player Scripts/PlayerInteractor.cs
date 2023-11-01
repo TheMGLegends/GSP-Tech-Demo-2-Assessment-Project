@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public class Interactor : MonoBehaviour
+public class PlayerInteractor : MonoBehaviour
 {
     [Header("Interaction Settings:")]
     [SerializeField] private float interactionRange;
@@ -15,8 +15,14 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
+        InteractWithObject();
+        InteractWithInventory();
+    }
+
+    private void InteractWithObject()
+    {
         Ray raycast = new(transform.position, transform.forward);
-        if (CanvasManager.instance.activeCanvas == CanvasManager.CanvasTypes.HUD && Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
+        if (CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD && Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
@@ -43,6 +49,20 @@ public class Interactor : MonoBehaviour
             ClearInteractionOutline();
         }
     }
+
+    private static void InteractWithInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        {
+            //InventoryManager.Instance.ListItems();
+            CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.InventoryView);
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView)
+        {
+            CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
+        }
+    }
+
 
     private void ClearInteractionOutline()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class InteractableBaseClass : MonoBehaviour
 {
-    [SerializeField] protected InteractableItemScriptableObject itemScriptableObject;
+    [SerializeField] protected Interactable interactable;
     [SerializeField] protected TMP_Text interactionPromptText;
 
     protected MeshRenderer meshRenderer;
@@ -28,7 +28,7 @@ public abstract class InteractableBaseClass : MonoBehaviour
     {
         if (outlineMaterialIndex != -1)
         {
-            interactionPromptText.text = itemScriptableObject.GetInteractionPrompt();
+            interactionPromptText.text = interactable.GetInteractionPrompt();
             meshRenderer.materials[outlineMaterialIndex].SetFloat("_Scale", 1.03f);
         }
     }

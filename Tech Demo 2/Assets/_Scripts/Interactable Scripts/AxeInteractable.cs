@@ -7,7 +7,7 @@ public class AxeInteractable : InteractableBaseClass, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting with axe!");
-        InventoryManager.instance.Add(itemScriptableObject);
+        InventoryManager.Instance.Add(interactable);
         Destroy(gameObject);
     }
 }

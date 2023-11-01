@@ -7,7 +7,7 @@ public class CubeInteractable : InteractableBaseClass, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting with cube!");
-        InventoryManager.instance.Add(itemScriptableObject);
+        InventoryManager.Instance.Add(interactable);
         Destroy(gameObject);
     }
 }
