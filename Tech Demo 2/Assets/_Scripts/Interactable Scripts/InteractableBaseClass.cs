@@ -40,4 +40,6 @@ public abstract class InteractableBaseClass : MonoBehaviour
             meshRenderer.materials[outlineMaterialIndex].SetFloat("_Scale", 0);
         }
     }
+
+    public virtual void Use() { }
 }

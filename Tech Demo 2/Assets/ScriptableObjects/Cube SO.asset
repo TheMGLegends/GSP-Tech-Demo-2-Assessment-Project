@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Cube SO
   m_EditorClassIdentifier: 
   InteractionPrompt: to test
-  itemType: 0
-  id: 2
   itemName: Cube
   itemSprite: {fileID: 7482667652216324306, guid: 16d91e8921ff6d74eb992db8b3f992be, type: 3}
+  item: {fileID: 4269852802892037682, guid: ca58aa6a9a03c044e81e07fc822a84d5, type: 3}

@@ -3,20 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Interactable Item", menuName = "ScriptableObjects/Interactable")]
 public class Interactable : ScriptableObject
 {
-    public enum ItemType
-    {
-        Cube,
-        Axe,
-        Document,
-        Flashlight,
-        Keypad
-    }
-
     [SerializeField] private string InteractionPrompt;
-    [SerializeField] private ItemType itemType;
-    [SerializeField] private string id;
     [SerializeField] private string itemName;
     [SerializeField] private Sprite itemSprite;
+    [SerializeField] private GameObject item;
 
     public string GetInteractionPrompt()
     {
@@ -33,8 +23,8 @@ public class Interactable : ScriptableObject
         return itemSprite;
     }
 
-    public ItemType GetItemType()
+    public GameObject GetItem()
     {
-        return itemType;
+        return item;
     }
 }

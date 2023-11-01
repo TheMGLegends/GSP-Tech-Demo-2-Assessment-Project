@@ -10,4 +10,9 @@ public class FlashlightInteractable : InteractableBaseClass, IInteractable
         InventoryManager.Instance.Add(interactable);
         Destroy(gameObject);
     }
+
+    public override void Use()
+    {
+        Debug.Log("Used flashlight!");
+    }
 }

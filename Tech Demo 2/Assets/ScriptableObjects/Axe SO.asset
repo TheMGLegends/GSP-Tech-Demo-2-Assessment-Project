@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Axe SO
   m_EditorClassIdentifier: 
   InteractionPrompt: to pickup
-  itemType: 1
-  id: 1
   itemName: Axe
   itemSprite: {fileID: 7482667652216324306, guid: f854a18c4781c5d4f80964a6e2ae943b, type: 3}
+  item: {fileID: 8544602165885206384, guid: f7d9904f15da74644a1a75519d7b5f34, type: 3}
