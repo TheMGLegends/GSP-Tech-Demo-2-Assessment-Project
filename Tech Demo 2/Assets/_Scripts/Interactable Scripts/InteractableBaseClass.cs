@@ -11,7 +11,7 @@ public abstract class InteractableBaseClass : MonoBehaviour
     protected MeshRenderer meshRenderer;
     protected int outlineMaterialIndex = -1;
 
-    protected void Start()
+    protected virtual void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
