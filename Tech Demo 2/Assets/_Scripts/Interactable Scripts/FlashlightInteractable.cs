@@ -11,8 +11,9 @@ public class FlashlightInteractable : InteractableBaseClass, IInteractable
         Destroy(gameObject);
     }
 
-    public override void Use()
+    public override bool Use()
     {
-        Debug.Log("Used flashlight!");
+        Debug.Log("Equipped flashlight!");
+        return false;
     }
 }

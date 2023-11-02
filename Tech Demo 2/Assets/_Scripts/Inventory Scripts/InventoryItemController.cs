@@ -35,8 +35,14 @@ public class InventoryItemController : MonoBehaviour
         {
             OnMouseLeaveButton();
             SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.ItemUsed);
-            item.GetItem().GetComponent<InteractableBaseClass>().Use();
-            InventoryManager.Instance.Remove(item);
+            if (item.GetItem().GetComponent<InteractableBaseClass>().Use())
+            {
+                InventoryManager.Instance.Remove(item);
+            }
+            else
+            {
+                InventoryManager.Instance.SetHeldItem(item);
+            }
         }
     }
 

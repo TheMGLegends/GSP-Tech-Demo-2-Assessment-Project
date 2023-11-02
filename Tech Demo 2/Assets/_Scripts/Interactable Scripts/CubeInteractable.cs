@@ -11,8 +11,9 @@ public class CubeInteractable : InteractableBaseClass, IInteractable
         Destroy(gameObject);
     }
 
-    public override void Use()
+    public override bool Use()
     {
         Debug.Log("Used cube!");
+        return true;
     }
 }

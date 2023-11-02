@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.019319529, g: 0.014620371, b: 0.010034224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -255,6 +255,7 @@ MonoBehaviour:
   items: []
   itemContent: {fileID: 1759667394}
   inventoryItems: []
+  playerHolder: {fileID: 415631884}
 --- !u!4 &27033242
 Transform:
   m_ObjectHideFlags: 0
@@ -523,6 +524,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2764604801754074079, guid: a8fa2f000ec6fc943bfebfb1f560d337, type: 3}
   m_PrefabInstance: {fileID: 4354657340560312646}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &415631884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7242832329429474099, guid: 7241d59c8ff83bb4cafe82ced9e040b8, type: 3}
+  m_PrefabInstance: {fileID: 3035384368257041832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feabee6ace1d42d42a7c11a161c75cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &433170848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1111,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.175
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1157,13 +1169,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.084186025, y: -0.25783414, z: -0.022557573, w: 0.9622502}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1119101648}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -10, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,9 +1581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2463396a048d3438e1f5472f24493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectsList: 00000000
+  soundEffectsList: 0000000001000000
   audioClipsList:
   - {fileID: 8300000, guid: 8426a25f96681674c9800792152d8f91, type: 3}
+  - {fileID: 8300000, guid: 982346e4ac9cc9a4da500c259b4c7a26, type: 3}
   soundEffectsPlayerPrefab: {fileID: 1353598209083468196, guid: a2838ada41744a646a9aa5d4190b28df, type: 3}
   soundVolume: 1
 --- !u!4 &874024610
@@ -3398,7 +3411,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -3481,7 +3494,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -4619,13 +4632,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878077640122014434, guid: 7241d59c8ff83bb4cafe82ced9e040b8, type: 3}
-      propertyPath: Inventory
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4716411818204444011, guid: 7241d59c8ff83bb4cafe82ced9e040b8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982700913259986578, guid: 7241d59c8ff83bb4cafe82ced9e040b8, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4663,8 +4676,8 @@ Camera:
   m_GameObject: {fileID: 3106931953315506170}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

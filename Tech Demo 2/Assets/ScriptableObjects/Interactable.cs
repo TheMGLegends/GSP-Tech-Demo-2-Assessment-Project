@@ -1,5 +1,14 @@
 using UnityEngine;
 
+public enum ItemType
+{
+    Axe,
+    Flashlight,
+    Cube,
+    Document,
+    Keypad
+}
+
 [CreateAssetMenu(fileName = "New Interactable Item", menuName = "ScriptableObjects/Interactable")]
 public class Interactable : ScriptableObject
 {
@@ -7,6 +16,7 @@ public class Interactable : ScriptableObject
     [SerializeField] private string itemName;
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private GameObject item;
+    [SerializeField] private ItemType itemType;
 
     public string GetInteractionPrompt()
     {
@@ -25,6 +35,18 @@ public class Interactable : ScriptableObject
 
     public GameObject GetItem()
     {
-        return item;
+        if (item != null)
+        {
+            return item;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public ItemType GetItemType()
+    {
+        return itemType;
     }
 }

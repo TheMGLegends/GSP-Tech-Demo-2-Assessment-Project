@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Flashlight
   itemSprite: {fileID: -2413806693520163455, guid: 959340c902f7d1a40ba4c8098b0e9ab0, type: 3}
   item: {fileID: 5388954590479091147, guid: a8fa2f000ec6fc943bfebfb1f560d337, type: 3}
+  itemType: 1

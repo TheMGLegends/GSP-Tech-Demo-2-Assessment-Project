@@ -41,5 +41,8 @@ public abstract class InteractableBaseClass : MonoBehaviour
         }
     }
 
-    public virtual void Use() { }
+    public virtual bool Use() 
+    {
+        return false;
+    }
 }

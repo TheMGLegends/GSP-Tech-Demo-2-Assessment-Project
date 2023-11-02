@@ -16,6 +16,10 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Transform itemContent;
     [SerializeField] private InventoryItemController[] inventoryItems;
 
+    [SerializeField] private PlayerHolder playerHolder;
+
+    private Interactable heldItem = null;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,6 +52,12 @@ public class InventoryManager : MonoBehaviour
         items.Remove(item);
 
         ListItems();
+
+        if (heldItem != null)
+        {
+            playerHolder.ClearHeldItem();
+            heldItem = null;
+        }
     }
 
     public void ListItems()
@@ -62,6 +72,20 @@ public class InventoryManager : MonoBehaviour
             {
                 inventoryItems[i].ClearSlot();
             }
+        }
+    }
+
+    public void SetHeldItem(Interactable item)
+    {
+        if (heldItem != item)
+        {
+            heldItem = item;
+            playerHolder.PlayerHoldingItem(heldItem);
+        }
+        else
+        {
+            heldItem = null;
+            playerHolder.ClearHeldItem();
         }
     }
 }

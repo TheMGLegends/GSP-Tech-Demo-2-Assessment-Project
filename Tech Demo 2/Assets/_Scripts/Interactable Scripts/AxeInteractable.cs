@@ -11,8 +11,9 @@ public class AxeInteractable : InteractableBaseClass, IInteractable
         Destroy(gameObject);
     }
 
-    public override void Use()
+    public override bool Use()
     {
-        Debug.Log("Used axe!");
+        Debug.Log("Equipped axe!");
+        return false;
     }
 }

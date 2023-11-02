@@ -5,7 +5,8 @@ public class SFXManager : MonoBehaviour
 {
     public enum SoundEffects
     {
-        ItemUsed
+        ItemUsed,
+        FlashlightOnOff
     }
     
     public static SFXManager Instance;
