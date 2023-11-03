@@ -6262,6 +6262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.0047169924, g: 0.8274474, b: 1, a: 0}
+  material: {fileID: 2100000, guid: 30cf57df1071c9347aff000314ea227d, type: 2}
 --- !u!1001 &7772205203354668626
 PrefabInstance:
   m_ObjectHideFlags: 0
