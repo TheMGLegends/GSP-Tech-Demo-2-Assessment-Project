@@ -9,7 +9,8 @@ public class CanvasManager : MonoBehaviour
     {
         HUD,
         DocumentView,
-        InventoryView
+        InventoryView,
+        KeypadView
     }
 
     public static CanvasManager Instance;
@@ -49,13 +50,18 @@ public class CanvasManager : MonoBehaviour
 
             canvasDictionary.Add(canvasTypesList[i], canvasList[i]);
         }
+
+        canvasDictionary[CanvasTypes.KeypadView].gameObject.SetActive(true);
     }
 
     public void ShowCanvas(CanvasTypes canvasToShow)
     {
         if (canvasDictionary.ContainsKey(canvasToShow))
         {
-            canvasDictionary[activeCanvas].gameObject.SetActive(false);
+            if (activeCanvas != CanvasTypes.KeypadView)
+            {
+                canvasDictionary[activeCanvas].gameObject.SetActive(false);
+            }
             canvasDictionary[canvasToShow].gameObject.SetActive(true);
             activeCanvas = canvasToShow;
         }

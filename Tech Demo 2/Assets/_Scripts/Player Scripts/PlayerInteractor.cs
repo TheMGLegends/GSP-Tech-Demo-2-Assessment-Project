@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,9 @@ public class PlayerInteractor : MonoBehaviour
     {
         InteractWithObject();
         InteractWithInventory();
+        InteractWithKeypad();
     }
+
 
     private void InteractWithObject()
     {
@@ -54,7 +57,6 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
-            //InventoryManager.Instance.ListItems();
             CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.InventoryView);
         }
         else if (Input.GetKeyDown(KeyCode.I) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView)
@@ -63,6 +65,14 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
+    private void InteractWithKeypad()
+    {
+        if (Input.GetKeyDown(KeyCode.X) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.KeypadView)
+        {
+            CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
+            CameraManager.Instance.SetCurrentCamera(CameraManager.Instance.GetPlayerCamera());
+        }
+    }
 
     private void ClearInteractionOutline()
     {
