@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 8
 --- !u!1 &634718110167140807
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 3
 --- !u!1 &1002156597464529990
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 2
 --- !u!1 &1430027404845224244
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,9 +725,10 @@ MonoBehaviour:
   interactable: {fileID: 11400000, guid: 74314bbce0a5122488a5ed51225203cf, type: 2}
   interactionPromptText: {fileID: 0}
   keypadCamera: {fileID: 8158375390842859151}
-  keypadText: {fileID: 0}
+  keypadText: {fileID: 6622955625176425008}
   actualAnswer: 
-  codeSize: 0
+  codeSize: 4
+  incorrectCodeDelay: 1
 --- !u!1 &1515010128997761940
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,8 +893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 12
 --- !u!1 &1677733693661457850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,8 +1014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 10
 --- !u!1 &2082399826591507023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,8 +1219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 7
 --- !u!1 &2902140699226808841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,8 +1340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 6
 --- !u!1 &3500293456014270651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,8 +1461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 4
 --- !u!1 &3788133897110732435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,8 +1582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 9
 --- !u!1 &4862936546197201403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,7 +1609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4862936546197201403}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 1.25, y: 2, z: -7.167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1831,8 +1832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 5
 --- !u!1 &5394013267623534810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,8 +1954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 11
 --- !u!1 &7297763136093247991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,8 +2108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.003921569, g: 0.827451, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
-  buttonID: 0
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
+  buttonID: 1
 --- !u!1 &8017462026901018710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.0047169924, g: 0.8274474, b: 1, a: 0}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
+  pressedColor: {r: 0, g: 0.6039216, b: 0.78039217, a: 0}
   buttonID: 0
 --- !u!1 &8800310754477285176
 GameObject:
@@ -2534,7 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0123456789
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b3bcd1833a406f478e125db01fc0b6d, type: 2}
   m_sharedMaterial: {fileID: 5608202080528317625, guid: 8b3bcd1833a406f478e125db01fc0b6d, type: 2}
