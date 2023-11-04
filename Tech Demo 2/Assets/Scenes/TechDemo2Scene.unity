@@ -3512,17 +3512,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6952633748468723585, guid: b9346c0069300e144bf0b4598fc619e6, type: 3}
   m_PrefabInstance: {fileID: 4964428992006944952}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2303921292862812341 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6622955625176425008, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-  m_PrefabInstance: {fileID: 9097968631193294320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!223 &2303921293847659190 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 7975473762303071393, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
@@ -4195,178 +4184,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1061670045}
     m_Modifications:
-    - target: {fileID: 4863315166045480, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4863315166045480, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 4863315166045480, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 665798745164809690, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 665798745164809690, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 665798745164809690, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065153890956045751, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065153890956045751, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065153890956045751, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469341689793223510, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469341689793223510, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469341689793223510, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
     - target: {fileID: 4862936546197201403, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
       propertyPath: m_Name
       value: Keypad
       objectReference: {fileID: 0}
     - target: {fileID: 5082602707099594060, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: codeSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5082602707099594060, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: keypadText
-      value: 
-      objectReference: {fileID: 2303921292862812341}
-    - target: {fileID: 5082602707099594060, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: actualAnswer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5082602707099594060, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: incorrectCodeDelay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5082602707099594060, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
       propertyPath: interactionPromptText
       value: 
       objectReference: {fileID: 1907339267}
-    - target: {fileID: 5289800775243030640, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5289800775243030640, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 5289800775243030640, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313947320547637365, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313947320547637365, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313947320547637365, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622955625176425008, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622955625176425008, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622955625176425008, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622955625176425008, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6887089440113968584, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6887089440113968584, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 6887089440113968584, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7184248375142353382, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7184248375142353382, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 7184248375142353382, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7655588537055424087, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7655588537055424087, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 7655588537055424087, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868422807130652810, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868422807130652810, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868422807130652810, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296268808913724234, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296268808913724234, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296268808913724234, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
     - target: {fileID: 8405028408401211519, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.25
@@ -4406,26 +4231,6 @@ PrefabInstance:
     - target: {fileID: 8405028408401211519, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448572652696662049, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: buttonID
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448572652696662049, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448572652696662049, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 8908459080256400373, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 8908459080256400373, guid: c439167907e41fa47b14daa5d1d518ae, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.6039216
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
