@@ -9,7 +9,8 @@ public class SFXManager : MonoBehaviour
         FlashlightOnOff,
         CodePress,
         CodeCorrect,
-        CodeWrong
+        CodeWrong,
+        DoorOpen
     }
     
     public static SFXManager Instance;
@@ -54,5 +55,10 @@ public class SFXManager : MonoBehaviour
         {
             Debug.Log("Sound not found!");
         }
+    }
+
+    public float GetSoundLength(SoundEffects soundEffect)
+    {
+        return soundEffectsDictionary[soundEffect].length;
     }
 }

@@ -23,6 +23,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
     [SerializeField] private int codeSize;
     [SerializeField] private float incorrectCodeDelay;
     [SerializeField] private DocumentInteractable codeDocument;
+    [SerializeField] private Animator doorAnimator;
 
     private BoxCollider boxCollider;
     private bool isBoxActive = true;
@@ -125,6 +126,8 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
             SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.CodeCorrect);
             meshRenderer.material.SetColor("_EmissionColor", Color.green);
             isAnswerCorrect = true;
+
+            StartCoroutine(DoorOpenCoroutine(SFXManager.Instance.GetSoundLength(SFXManager.SoundEffects.CodeCorrect) + 0.5f));
         }
         else if (actualAnswer != currentAnswer)
         {
@@ -161,6 +164,14 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
         Clear();
         meshRenderer.material.SetColor("_EmissionColor", startingColor);
         isInputLocked = false;
+    }
+
+    private IEnumerator DoorOpenCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        doorAnimator.SetBool("isOpen", true);
+        SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.DoorOpen);
     }
 
     public bool IsInputLocked()
