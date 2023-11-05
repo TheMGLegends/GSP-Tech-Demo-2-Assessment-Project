@@ -11,7 +11,7 @@ Gameplay Systems Programming 2nd Tech Demo (3D First Person Horror)
 2. Inventory System [DONE - NOT TESTED]
 3. Subtitle Typewriter System with Voiceover [DONE - NOT TESTED]
 4. Document Viewing System [DONE - NOT TESTED]
-5. Keypad Puzzle
+5. Keypad Puzzle [DONE - NOT TESTED]
    - All keys to display digit on-screen
    - Should require 4-digit code
    - LED lights should glow depending on right/wrong answer
