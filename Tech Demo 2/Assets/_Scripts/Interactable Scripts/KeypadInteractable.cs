@@ -1,11 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using TMPro;
-using Unity.Collections;
-using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class KeypadInteractable : InteractableBaseClass, IInteractable
