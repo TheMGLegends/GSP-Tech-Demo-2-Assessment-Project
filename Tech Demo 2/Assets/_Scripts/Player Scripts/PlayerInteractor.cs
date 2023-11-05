@@ -59,7 +59,7 @@ public class PlayerInteractor : MonoBehaviour
         {
             CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.InventoryView);
         }
-        else if (Input.GetKeyDown(KeyCode.I) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView)
+        else if (Input.GetKeyDown(KeyCode.X) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.InventoryView)
         {
             CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
         }
@@ -67,7 +67,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void InteractWithKeypad()
     {
-        if (Input.GetKeyDown(KeyCode.X) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.KeypadView)
+        if (Input.GetKeyDown(KeyCode.X) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.KeypadPrompts)
         {
             CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
             CameraManager.Instance.SetCurrentCamera(CameraManager.Instance.GetPlayerCamera());

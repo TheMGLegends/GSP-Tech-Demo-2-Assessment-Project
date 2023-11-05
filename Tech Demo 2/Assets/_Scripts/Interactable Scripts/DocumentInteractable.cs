@@ -23,4 +23,9 @@ public class DocumentInteractable : InteractableBaseClass, IInteractable
         CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.DocumentView);
         CanvasManager.Instance.AccessCanvasGO(CanvasManager.CanvasTypes.DocumentView).GetComponent<DocumentViewingController>().SetDocumentContentsText(documentText);
     }
+
+    public void SetDocumentText(string text)
+    {
+        documentText = text;
+    }
 }

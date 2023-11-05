@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
     [SerializeField] private string actualAnswer;
     [SerializeField] private int codeSize;
     [SerializeField] private float incorrectCodeDelay;
+    [SerializeField] private DocumentInteractable codeDocument;
 
     private BoxCollider boxCollider;
     private bool isBoxActive = true;
@@ -30,29 +32,33 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
     private string currentAnswer = "";
     private Color startingColor;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-        boxCollider = GetComponent<BoxCollider>();
-
         for (int i = 0; i < codeSize; i++)
         {
             int temp = Random.Range(0, 10);
             actualAnswer += temp;
         }
 
+        codeDocument.SetDocumentText(actualAnswer);
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        boxCollider = GetComponent<BoxCollider>();
         keypadText.text = null;
         startingColor = meshRenderer.material.GetColor("_EmissionColor");
 
-        Debug.Log(actualAnswer);
+        Debug.Log(actualAnswer);       
     }
 
     public void Interact()
     {
         Debug.Log("Interacting with keypad!");
-        CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.KeypadView);
         boxCollider.enabled = false;
         isBoxActive = false;
+        CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.KeypadPrompts);
         CameraManager.Instance.SetCurrentCamera(keypadCamera);
     }
 
@@ -152,6 +158,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
     {
         yield return new WaitForSeconds(delay);
 
+        Clear();
         meshRenderer.material.SetColor("_EmissionColor", startingColor);
         isInputLocked = false;
     }

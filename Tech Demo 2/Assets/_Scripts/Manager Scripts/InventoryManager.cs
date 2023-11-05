@@ -88,4 +88,9 @@ public class InventoryManager : MonoBehaviour
             playerHolder.ClearHeldItem();
         }
     }
+
+    public Interactable GetHeldItem()
+    {
+        return heldItem;
+    }
 }

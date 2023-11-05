@@ -11,6 +11,8 @@ public class TypeWriterController : MonoBehaviour
     [SerializeField] private TMP_Text typewriterText;
     [SerializeField] private List<string> textPhrasesList = new();
     [SerializeField] private List<AudioClip> audioPhrasesList = new();
+    [Range(0, 1)]
+    [SerializeField] private float soundVolume = 1f;
 
     private AudioSource audioSource;
     private bool isTalking = false;
@@ -42,7 +44,7 @@ public class TypeWriterController : MonoBehaviour
         {
             float delayPerPhrase = 0;
             float audioDuration = audioPhrasesList[i].length;
-            audioSource.PlayOneShot(audioPhrasesList[i]);
+            audioSource.PlayOneShot(audioPhrasesList[i], soundVolume);
 
             for (int j = 0; j < textPhrasesList[i].Length; j++)
             {

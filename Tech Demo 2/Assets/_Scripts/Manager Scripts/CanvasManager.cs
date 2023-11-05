@@ -10,7 +10,7 @@ public class CanvasManager : MonoBehaviour
         HUD,
         DocumentView,
         InventoryView,
-        KeypadView
+        KeypadPrompts
     }
 
     public static CanvasManager Instance;
@@ -20,7 +20,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private List<CanvasTypes> canvasTypesList = new();
     [SerializeField] private List<Canvas> canvasList = new();
 
-    private Dictionary<CanvasTypes, Canvas> canvasDictionary = new();
+    private readonly Dictionary<CanvasTypes, Canvas> canvasDictionary = new();
     public CanvasTypes activeCanvas;
 
     private void Awake()
@@ -50,20 +50,15 @@ public class CanvasManager : MonoBehaviour
 
             canvasDictionary.Add(canvasTypesList[i], canvasList[i]);
         }
-
-        canvasDictionary[CanvasTypes.KeypadView].gameObject.SetActive(true);
     }
 
     public void ShowCanvas(CanvasTypes canvasToShow)
     {
         if (canvasDictionary.ContainsKey(canvasToShow))
         {
-            if (activeCanvas != CanvasTypes.KeypadView)
-            {
-                canvasDictionary[activeCanvas].gameObject.SetActive(false);
-            }
-            canvasDictionary[canvasToShow].gameObject.SetActive(true);
+            canvasDictionary[activeCanvas].gameObject.SetActive(false);
             activeCanvas = canvasToShow;
+            canvasDictionary[canvasToShow].gameObject.SetActive(true);
         }
         else
         {
