@@ -31,6 +31,10 @@ public class PlayerInteractor : MonoBehaviour
             {
                 if (previousInteractable != interactable)
                 {
+                    if (previousInteractable != null)
+                    {
+                        ClearInteractionOutline();
+                    }
                     interactable.OnHoverEnter();
                     previousInteractable = interactable;
                     isHovering = true;

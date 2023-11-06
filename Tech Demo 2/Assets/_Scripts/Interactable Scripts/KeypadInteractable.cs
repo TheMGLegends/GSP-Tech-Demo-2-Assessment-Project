@@ -63,7 +63,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
         {
             boxCollider.enabled = true;
             isBoxActive = true;
-            Debug.Log("Camera change yes");
+            Debug.Log("Camera change");
         }
     }
 

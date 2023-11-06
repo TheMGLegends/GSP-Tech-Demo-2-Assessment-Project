@@ -33,7 +33,7 @@ public class InventoryItemController : MonoBehaviour
             SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.ItemUsed);
             if (item.GetItem().GetComponent<InteractableBaseClass>().Use())
             {
-                InventoryManager.Instance.Remove(item);
+                RemoveItem();
             }
             else
             {

@@ -7,8 +7,8 @@ public class AxeInteractable : InteractableBaseClass, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting with axe!");
-        InventoryManager.Instance.Add(interactable);
-        Destroy(gameObject);
+        if (InventoryManager.Instance.Add(interactable))
+            Destroy(gameObject);
     }
 
     public override bool Use()

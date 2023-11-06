@@ -7,8 +7,8 @@ public class CubeInteractable : InteractableBaseClass, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting with cube!");
-        InventoryManager.Instance.Add(interactable);
-        Destroy(gameObject);
+        if (InventoryManager.Instance.Add(interactable))
+            Destroy(gameObject);
     }
 
     public override bool Use()

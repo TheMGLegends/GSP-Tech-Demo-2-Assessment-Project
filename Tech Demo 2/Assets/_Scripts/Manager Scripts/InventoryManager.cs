@@ -17,6 +17,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private InventoryItemController[] inventoryItems;
 
     [SerializeField] private PlayerHolder playerHolder;
+    [SerializeField] private TMP_Text fullText;
+    [SerializeField] private float fullNotificationDelay;
 
     private Interactable heldItem = null;
 
@@ -37,14 +39,20 @@ public class InventoryManager : MonoBehaviour
         inventoryItems = itemContent.GetComponentsInChildren<InventoryItemController>();
     }
 
-    public void Add(Interactable item)
+    public bool Add(Interactable item)
     {
         if (items.Count < inventorySpace)
         {
             items.Add(item);
 
             ListItems();
+            return true;
         }
+        else
+        {
+            StartCoroutine(DisplayFullTextCoroutine(fullNotificationDelay));
+        }
+        return false;
     }
 
     public void Remove(Interactable item)
@@ -55,8 +63,11 @@ public class InventoryManager : MonoBehaviour
 
         if (heldItem != null)
         {
-            playerHolder.ClearHeldItem();
-            heldItem = null;
+            if (heldItem == item)
+            {
+                playerHolder.ClearHeldItem();
+                heldItem = null;
+            }
         }
     }
 
@@ -92,5 +103,12 @@ public class InventoryManager : MonoBehaviour
     public Interactable GetHeldItem()
     {
         return heldItem;
+    }
+
+    private IEnumerator DisplayFullTextCoroutine(float delay)
+    {
+        fullText.enabled = true;
+        yield return new WaitForSeconds(delay);
+        fullText.enabled = false;
     }
 }
