@@ -15,6 +15,7 @@ public class ButtonController : MonoBehaviour
     private Color startingColor;
 
     private bool canClick = true;
+    private bool isClicked = false;
 
     private void Start() 
     {
@@ -27,11 +28,10 @@ public class ButtonController : MonoBehaviour
         startingColor = materialObject.material.color;
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        if (canClick)
+        if (!isClicked && canClick)
         {
-            Debug.Log("Entered");
             materialObject.material.color = highlightedColor;
         }
     }
@@ -40,6 +40,7 @@ public class ButtonController : MonoBehaviour
     {
         if (canClick)
         {
+            isClicked = true;
             materialObject.material.color = pressedColor;
             interactable.AddInput(buttonID);
         }
@@ -49,7 +50,7 @@ public class ButtonController : MonoBehaviour
     {
         if (canClick)
         {
-            materialObject.material.color = highlightedColor;
+            isClicked = false;
         }
     }
 
@@ -57,7 +58,7 @@ public class ButtonController : MonoBehaviour
     {
         if (canClick)
         {
-            Debug.Log("Exited");
+            isClicked = false;
             materialObject.material.color = startingColor;
         }
     }
