@@ -7,11 +7,11 @@ Gameplay Systems Programming 2nd Tech Demo (3D First Person Horror)
 1. 3-6 Minute video showcasing completed features (Maybe you can include parts where you show your code and describe a bit how it works)
 
 # Tech Demo Requirements:
-1. Interaction System with Tooltips [DONE - NOT TESTED]
-2. Inventory System [DONE - NOT TESTED]
-3. Subtitle Typewriter System with Voiceover [DONE - NOT TESTED]
-4. Document Viewing System [DONE - NOT TESTED]
-5. Keypad Puzzle [DONE - NOT TESTED]
+1. Interaction System with Tooltips [DONE]
+2. Inventory System [DONE]
+4. Subtitle Typewriter System with Voiceover [DONE]
+6. Document Viewing System [DONE]
+7. Keypad Puzzle [DONE]
    - All keys to display digit on-screen
    - Should require 4-digit code
    - LED lights should glow depending on right/wrong answer
