@@ -4,6 +4,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Individual buttons on keypad
+/// </summary>
 public class ButtonController : MonoBehaviour
 {
     [SerializeField] private Color highlightedColor;
@@ -21,6 +24,7 @@ public class ButtonController : MonoBehaviour
     {
         if (transform.parent.parent != null)
         {
+            // INFO: Gets the keypadinteractable component from the grandparent object
             interactable = transform.parent.parent.GetComponent<KeypadInteractable>();
         }
 
@@ -65,6 +69,7 @@ public class ButtonController : MonoBehaviour
 
     private void Update()
     {
+        // INFO: Prevents button from being highlighted when input is locked and vice versa
         if (interactable.IsInputLocked() && canClick)
         {
             materialObject.material.color = startingColor;

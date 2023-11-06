@@ -4,6 +4,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Handles the typewriter effect 
+/// </summary>
 public class TypeWriterController : MonoBehaviour
 {
     [SerializeField] private float typewriterEffectDelay;
@@ -24,6 +27,7 @@ public class TypeWriterController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // INFO: isTalking prevents audio and text from displaying twice if player steps in and out of trigger
         if (other.CompareTag("Player") && !isTalking)
         {
             if (textPhrasesList.Count == audioPhrasesList.Count) 
@@ -48,11 +52,14 @@ public class TypeWriterController : MonoBehaviour
 
             for (int j = 0; j < textPhrasesList[i].Length; j++)
             {
+                // INFO: Displays text a character at a time
                 typewriterText.text += textPhrasesList[i][j];
                 yield return new WaitForSeconds(typewriterDelay);
                 delayPerPhrase += typewriterDelay;
             }
 
+            // INFO: Given that the audio clip is longer than the length that is has taken for the entire phrase to be displayed on screen
+            // we wait the remainder of the time left + a constant end of line delay before we move onto the next phrase and audio clip
             if (audioDuration > delayPerPhrase)
             {
                 yield return new WaitForSeconds((audioDuration - delayPerPhrase) + endOfLineDelay);

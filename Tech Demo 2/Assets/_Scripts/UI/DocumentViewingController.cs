@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls the document viewer 
+/// </summary>
 public class DocumentViewingController : MonoBehaviour
 {
     [SerializeField] private GameObject inspectionObject;
@@ -27,6 +30,7 @@ public class DocumentViewingController : MonoBehaviour
         {
             CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.HUD);
 
+            // INFO: Disables inspecting component if exiting when inspecting
             if (isInspecting)
             {
                 inspectionObject.SetActive(false);

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles what the player is holding
+/// </summary>
 public class PlayerHolder : MonoBehaviour
 {
     [SerializeField] private GameObject axe;
@@ -14,22 +17,29 @@ public class PlayerHolder : MonoBehaviour
     {
         if (heldItem != null)
         {
-            if (item.GetItemType() == ItemType.Flashlight && Input.GetKeyDown(KeyCode.Mouse0) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
-            {
-                SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.FlashlightOnOff);
+            HandleFlashlight();
+        }
+    }
 
-                if (!heldItem.GetComponentInChildren<Light>().isActiveAndEnabled)
-                {
-                    heldItem.GetComponentInChildren<Light>().enabled = true;
-                }
-                else
-                {
-                    heldItem.GetComponentInChildren<Light>().enabled = false;
-                }
+    private void HandleFlashlight()
+    {
+        if (item.GetItemType() == ItemType.Flashlight && Input.GetKeyDown(KeyCode.Mouse0) && CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
+        {
+            SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.FlashlightOnOff);
+
+            // INFO: Switches light on and off
+            if (!heldItem.GetComponentInChildren<Light>().isActiveAndEnabled)
+            {
+                heldItem.GetComponentInChildren<Light>().enabled = true;
+            }
+            else
+            {
+                heldItem.GetComponentInChildren<Light>().enabled = false;
             }
         }
     }
 
+    // INFO: Sets the held item with the newItem
     public void PlayerHoldingItem(Interactable newItem)
     {
         ClearHeldItem();

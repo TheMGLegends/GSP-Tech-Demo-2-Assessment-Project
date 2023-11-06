@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls tooltip prompt of the game
+/// </summary>
 public class UIController : MonoBehaviour
 {
     [SerializeField] private PlayerInteractor interactor;

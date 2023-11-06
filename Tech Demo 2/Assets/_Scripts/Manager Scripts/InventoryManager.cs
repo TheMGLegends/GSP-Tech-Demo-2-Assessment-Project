@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Manages the inventory
+/// </summary>
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
@@ -50,6 +53,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
+            // INFO: Given that there is no space, displays Inventory Full text
             StartCoroutine(DisplayFullTextCoroutine(fullNotificationDelay));
         }
         return false;
@@ -59,10 +63,12 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
 
+        // INFO: Re-lists items so that any changes made are visibly changed
         ListItems();
 
         if (heldItem != null)
         {
+            // INFO: Given that the removed item is the held item it removes the what the player is holding
             if (heldItem == item)
             {
                 playerHolder.ClearHeldItem();
@@ -95,6 +101,8 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
+            // INFO: If the selected item is already the held item, it signifies that the player no longer wishes to hold the item
+            // so it gets rid of that item from the players hand
             heldItem = null;
             playerHolder.ClearHeldItem();
         }

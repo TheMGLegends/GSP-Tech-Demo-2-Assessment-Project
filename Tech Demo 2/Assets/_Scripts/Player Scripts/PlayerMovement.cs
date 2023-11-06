@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// Controls the players movement
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movementDirection = playerOrientation.forward * verticalInput + playerOrientation.right * horizontalInput;
 
+        // INFO: Only allows movement when the hud canvas is active
         if (CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD)
         {
             rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Force);

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Manages all the canvases in the game
+/// </summary>
 public class CanvasManager : MonoBehaviour
 {
     public enum CanvasTypes
@@ -54,6 +57,7 @@ public class CanvasManager : MonoBehaviour
 
     public void ShowCanvas(CanvasTypes canvasToShow)
     {
+        // INFO: Disables the currently active canvas then switches the currently active canvas to the canvas to show and re-enables it
         if (canvasDictionary.ContainsKey(canvasToShow))
         {
             canvasDictionary[activeCanvas].gameObject.SetActive(false);

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Handles generic functions that all interactable objects have in common
+/// </summary>
 public abstract class InteractableBaseClass : MonoBehaviour
 {
     [SerializeField] protected Interactable interactable;
@@ -15,6 +18,7 @@ public abstract class InteractableBaseClass : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
+        // INFO: Finds the outline material and makes note of its index in the materials array
         for (int i = 0; i < meshRenderer.materials.Length; i++)
         {
             if (meshRenderer.materials[i].name == "OutlineMaterial (Instance)")
@@ -29,6 +33,7 @@ public abstract class InteractableBaseClass : MonoBehaviour
         if (outlineMaterialIndex != -1)
         {
             interactionPromptText.text = interactable.GetInteractionPrompt();
+            // INFO: Outlines GOs mesh
             meshRenderer.materials[outlineMaterialIndex].SetFloat("_Scale", 1.03f);
         }
     }

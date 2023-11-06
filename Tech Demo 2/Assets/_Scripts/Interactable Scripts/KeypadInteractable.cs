@@ -2,6 +2,18 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Keypad interactable object handles logic for keypad:
+/// 1. Initializing random 4 digit code at runtime
+/// 2. Setting the appropriate canvas and camera for a proper keypad interaction
+/// 3. Playing sounds when keys are pressed
+/// 4. Checking keys that were pressed to see what appropriate function should be run:
+///     a). If 0-9 (Inclusive) add number to currentAnswer
+///     b). If 10-12 (Inclusive) special keys pressed (Enter, Clear, Delete), run relevant function
+/// 5. Comparing codes when enter key is pressed:
+///     a). If correct, display green, sound plays and relating action occurs (Door open animation with sound effect)
+///     b). If incorrect, display red, sound plays and input gets cleared after specified delay
+/// </summary>
 public class KeypadInteractable : InteractableBaseClass, IInteractable
 {
     enum ButtonIDs
@@ -29,6 +41,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
 
     private void Awake()
     {
+        // INFO: Random 4 digit code generated
         for (int i = 0; i < codeSize; i++)
         {
             int temp = Random.Range(0, 10);
@@ -43,6 +56,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
         base.Start();
         boxCollider = GetComponent<BoxCollider>();
         keypadText.text = null;
+        // INFO: Gets the starting color of the digit display screen
         startingColor = meshRenderer.material.GetColor("_EmissionColor");
 
         Debug.Log(actualAnswer);       
@@ -53,12 +67,15 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
         Debug.Log("Interacting with keypad!");
         boxCollider.enabled = false;
         isBoxActive = false;
+        // INFO: Shows relevant canvas relating to interaction
         CanvasManager.Instance.ShowCanvas(CanvasManager.CanvasTypes.KeypadPrompts);
+        // INFO: Switches the relevant camera for interaction
         CameraManager.Instance.SetCurrentCamera(keypadCamera);
     }
 
     private void Update()
     {
+        // INFO: Re-enables keypad box collider so that when user looks at the keypad again outline works as it should
         if (keypadCamera.GetComponent<Camera>().enabled == false && !isBoxActive)
         {
             boxCollider.enabled = true;
@@ -71,17 +88,21 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
     {
         if (!isAnswerCorrect)
         {
+            // INFO: Given that the user hasn't yet input 4 digits and the input is less than 10 (0 - 9)
+            // we know that the input is its corresponding int value so we add it to the current answer
             if (currentAnswer.Length < actualAnswer.Length && input < 10)
             {
                 currentAnswer += input;
                 keypadText.text = currentAnswer;
             }
 
+            // INFO: All keys except enter have a key pressed sound (Enter has different sounds [Correct and Incorrect])
             if (input != (int)ButtonIDs.Enter)
             {
                 SFXManager.Instance.PlaySoundEffect(SFXManager.SoundEffects.CodePress);
             }
 
+            // INFO: Given that number is 10+ it signifies special key and needs further checking
             CheckNumber(input);
         }
     }
@@ -89,6 +110,7 @@ public class KeypadInteractable : InteractableBaseClass, IInteractable
 
     private void RemoveNumber()
     {
+        // INFO: Only get rid of the last character if there are characters to get rid of
         if (currentAnswer.Length > 0)
         {
             currentAnswer = currentAnswer[..^1];

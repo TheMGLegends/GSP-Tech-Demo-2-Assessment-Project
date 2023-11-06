@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Manages all the cameras in the game
+/// </summary>
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance;
@@ -30,6 +33,7 @@ public class CameraManager : MonoBehaviour
 
     public void SetCurrentCamera(GameObject newCamera)
     {
+        // INFO: Disables old camera and enables new camera
         if (currentCamera != null)
         {
             currentCamera.GetComponent<Camera>().enabled = false;
@@ -44,6 +48,7 @@ public class CameraManager : MonoBehaviour
 
     public GameObject GetPlayerCamera()
     {
+        // INFO: Gets the player camera, which is the camera that all instances return to
         return playerCamera;
     }
 }

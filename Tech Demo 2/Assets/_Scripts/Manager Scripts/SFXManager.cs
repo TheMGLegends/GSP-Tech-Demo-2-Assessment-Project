@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages all sound effects in the game
+/// </summary>
 public class SFXManager : MonoBehaviour
 {
     public enum SoundEffects

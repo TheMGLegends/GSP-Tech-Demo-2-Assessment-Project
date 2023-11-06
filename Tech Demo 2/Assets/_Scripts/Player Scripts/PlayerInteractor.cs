@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// Handles player interactions with other GOs in the game
 /// </summary>
 public class PlayerInteractor : MonoBehaviour
 {
@@ -25,6 +25,7 @@ public class PlayerInteractor : MonoBehaviour
     private void InteractWithObject()
     {
         Ray raycast = new(transform.position, transform.forward);
+        // INFO: Only allows interaction with other objects if the current canvas is HUD
         if (CanvasManager.Instance.activeCanvas == CanvasManager.CanvasTypes.HUD && Physics.Raycast(raycast, out RaycastHit hitInfo, interactionRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))

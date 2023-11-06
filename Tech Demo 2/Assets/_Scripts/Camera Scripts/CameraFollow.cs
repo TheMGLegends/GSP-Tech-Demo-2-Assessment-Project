@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// GO follows specified object
 /// </summary>
 public class CameraFollow : MonoBehaviour
 {
